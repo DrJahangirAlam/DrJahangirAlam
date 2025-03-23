@@ -1,0 +1,122 @@
+# Let's generate a basic structure for the HTML, CSS, and JavaScript files.
+
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Container Creator</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Welcome to Container Creation</h2>
+        <p>High-quality container designs tailored to your needs. Explore our work.</p>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am an engineering student and a professional container creator, bringing precision and quality to every design.</p>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We create customized containers for various industries. Quality, durability, and innovation are at the core of what we do.</p>
+    </section>
+    <section id="projects">
+        <h2>Recent Projects</h2>
+        <p>Check out some of our latest work.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch for custom container designs and inquiries.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Container Creator. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+"""
+
+css_content = """
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+"""
+
+js_content = """
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Website loaded and ready.");
+});
+"""
+
+# Save the content into files.
+file_paths = {
+    "index.html": html_content,
+    "styles.css": css_content,
+    "scripts.js": js_content,
+}
+
+# Create the files in the '/mnt/data' directory.
+import os
+
+output_dir = "/mnt/data/container_creator_demo"
+os.makedirs(output_dir, exist_ok=True)
+
+# Write the content into respective files
+for filename, content in file_paths.items():
+    with open(os.path.join(output_dir, filename), "w") as file:
+        file.write(content)
+
+output_dir  # Return the directory where the files are saved.
